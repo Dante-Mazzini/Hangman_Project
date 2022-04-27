@@ -1,3 +1,8 @@
+from glob import escape
+import random
+import os
+import msvcrt
+
 #in this part I define the function read. 
 #It extracts the data from the "data.txt" file and put it in a list in the correct format.
 def read():
@@ -12,16 +17,364 @@ def read():
     return words
 
 
+def try_letter(letter):
+    try:
+        if (len(letter) > 1 or len(letter) == 0) or not letter.isalpha():
+            raise ValueError("you must enter only one letter")
+        return letter
+    except ValueError as ve:
+        os.system("cls")
+        print(ve)
+        return False
+
+
+def decide():
+    cicle = 1
+    print("""DO YOU WANT TO PLAY AGAIN?
+        1.Yes
+        2.No""")
+    while cicle == 1:
+        rematch = input()
+        if rematch == "1":
+            rematch = True
+            cicle = 0
+        elif rematch == "2":
+            rematch = False
+            cicle = 0
+        os.system("cls")
+        print("Select a correct option:")
+    return rematch
+
+            
+                
 #in this part I define the function game. 
 #It runs the game from the base.
-def game():
-    pass
-
+def game(words):
+    rematch = True
+    while rematch == True:
+#random word selection
+        lwords = len(words)
+        n = random.randint(0,lwords)
+        rword = words[n]
+        lword = len(rword)
+#constructing interface
+        os.system("cls")
+        letters = []
+        hword = []
+        letters_missed = []
+#stands for dead count
+        dc = 0
+        for i in range(0, lword):
+            hword.append('_')
+        print(hword) 
+        print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x
+        x   x
+        x  x
+        x x
+        xx
+        x
+        x
+        x
+        x
+        x
+        x
+        x
+        x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x     x                                    xx
+   x      x                                   x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+        while dc < 6:
+            print("Enter a letter: ")
+            letter = input()
+            if try_letter(letter) != False:
+                os.system("cls")
+                letters.append(letter)
+                lletters = len(letters)
+                unknown_letters = 0
+                for i in range(0, lword):
+                    if hword[i] == '_':
+                        unknown_letters = unknown_letters + 1
+                for i in range(0, lword):
+                    for j in range(0, lletters):
+                        if hword[i] != '_':
+                            break
+                        if rword[i] == letters[j]:
+                            hword[i] = letters[j]
+                        else:
+                            hword[i] = '_'
+                unknown_letters2 = 0
+                a = len(letters)
+                a = a - 1
+                b = 0
+                for i in range(0, lword):
+                    if hword[i] == '_':
+                        unknown_letters2 = unknown_letters2 + 1
+                    if hword[i] == letters[a]:
+                        b = 1
+                if unknown_letters2 == 0:
+                    print("CONGRATULATIONS, YOU WON!!!")
+                    rematch = decide()
+                    break
+                if unknown_letters == unknown_letters2:
+                    dc = dc + 1
+                if b == 0:
+                    letters_missed.append(letters[a])
+            print("WORD: ")
+            print(hword)
+            print("\n")
+            print("LETTERS MISSED: ")
+            print(letters_missed)
+            print("\n")
+            if dc == 0:
+                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x
+        x   x
+        x  x
+        x x
+        xx
+        x
+        x
+        x
+        x
+        x
+        x
+        x
+        x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x                                           x
+   x                                          x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+            elif dc == 1:
+                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx
+        x
+        x
+        x
+        x
+        x
+        x
+        x
+        x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x                                          xx
+   x                                          x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+            elif dc == 2:
+                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx                           x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x
+        x
+        x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x                                          xx
+   x                                          x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+            elif dc == 3:
+                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx                           x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x                           x
+        x                          x
+        x                         x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x     x                                    xx
+   x      x                                   x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+            elif dc == 4:
+                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx                           x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x                           x x
+        x                          x   x
+        x                         x     x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x     x                                    xx
+   x      x                                   x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+            elif dc == 5:
+                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx                           x
+        x                            xx
+        x                            x x
+        x                            x  x
+        x                            x   x
+        x                            x
+        x                           x x
+        x                          x   x
+        x                         x     x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x     x                                    xx
+   x      x                                   x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+            elif dc == 6:
+                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx                           x
+        x   x   xxxxxxxxxxxxxxx     xxx
+        x   x   x  xx       x      x x x
+        x   x   x  xxxxxx   x     x  x  x
+        x   x   x  x    x   x    x   x   x
+        x   xxxxxxxxxxxxx   x        x
+        x                           x x
+        x                          x   x
+        x                         x     x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x     x                                    xx
+   x      x                                   x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+        if rematch != False:
+            print("you just lost")
+            rematch = decide()
 
 def run():
 #in this part I extract from the data file the list and put it in a list
     words = read()
-    game(words)
+    option = 0
+    print("""Select one opction:
+1. Play.
+2. Quit.
+""")
+    while option != 2:
+        os.system("cls")
+        option = int(input("""Select one option:
+1. Play.
+2. Quit.
+Selection: """))
+        if option == 1:
+            game(words)
+        elif option ==2:
+            break
+        elif option != 1 and option != 2:
+            print("You must select a valid option: ")
+
+
+    
 
 if __name__ == '__main__':
     run()

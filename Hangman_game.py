@@ -17,6 +17,7 @@ def read():
     return words
 
 
+#fuction made for fixing the input of letters in the game
 def try_letter(letter):
     try:
         if (len(letter) > 1 or len(letter) == 0) or not letter.isalpha():
@@ -28,6 +29,8 @@ def try_letter(letter):
         return False
 
 
+#function of menu after winning/losing
+#it returns the variable necesary to break the while cycle
 def decide():
     cicle = 1
     print("""DO YOU WANT TO PLAY AGAIN?
@@ -262,6 +265,7 @@ x  x x x   x x  xx x   x  x   x x   x x  xxx x
 x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
 
+
 #in this part I define the function game. 
 #It runs the game from the base.
 def game(words):
@@ -272,7 +276,7 @@ def game(words):
         n = random.randint(0,lwords)
         rword = words[n]
         lword = len(rword)
-#constructing interface
+#defining lists for the game
         os.system("cls")
         letters = []
         hword = []

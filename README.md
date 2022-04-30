@@ -12,5 +12,5 @@ The idea here is to develop the "hangman game" where you have to insert a letter
 
 Version:
 --------
-
+Current version v.03.
 Python 3.9.7 developed on Windows with VSC.

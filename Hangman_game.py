@@ -45,8 +45,223 @@ def decide():
         print("Select a correct option:")
     return rematch
 
-            
-                
+
+hangman_draw1 = """\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x
+        x   x
+        x  x
+        x x
+        xx
+        x
+        x
+        x
+        x
+        x
+        x
+        x
+        x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x   x                                      xx
+   x    x                                     x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+
+hangman_draw2 = """\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx
+        x
+        x
+        x
+        x
+        x
+        x
+        x
+        x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x   x                                      xx
+   x    x                                     x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+
+hangman_draw3 = """\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx                           x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x
+        x
+        x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x   x                                      xx
+   x    x                                     x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+
+hangman_draw4 = """\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx                           x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x                           x
+        x                          x
+        x                         x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x   x                                      xx
+   x    x                                     x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+
+hangman_draw5 = """\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx                           x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x                            x
+        x                           x x
+        x                          x   x
+        x                         x     x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x   x                                      xx
+   x    x                                     x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+
+hangman_draw6 = """\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx                           x
+        x                            xx
+        x                            x x
+        x                            x  x
+        x                            x   x
+        x                            x
+        x                           x x
+        x                          x   x
+        x                         x     x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x   x                                      xx
+   x    x                                     x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
+
+hangman_draw7 = """\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        x       x                    x
+        x      x                     x
+        x     x                      x
+        x    x                     xxxxx
+        x   x                      xxxxx
+        x  x                       xxxxx
+        x x                        xxxxx
+        xx                           x
+        x   x   xxxxxxxxxxxxxxx     xxx
+        x   x   x  xx       x      x x x
+        x   x   x  xxxxxx   x     x  x  x
+        x   x   x  x    x   x    x   x   x
+        x   xxxxxxxxxxxxx   x        x
+        x                           x x
+        x                          x   x
+        x                         x     x
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    x   x                                      xx
+   x    x                                     x x
+  x                                          x  x
+ x                                          x   x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
+x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
+x  x x x   x xx  x x      xx xx xx  x xx  xx   x
+x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
+x  x x x   x x  xx x   x  x   x x   x x  xxx x
+x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"""
+
 #in this part I define the function game. 
 #It runs the game from the base.
 def game(words):
@@ -67,35 +282,7 @@ def game(words):
         for i in range(0, lword):
             hword.append('_')
         print(hword) 
-        print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        x       x                    x
-        x      x                     x
-        x     x                      x
-        x    x
-        x   x
-        x  x
-        x x
-        xx
-        x
-        x
-        x
-        x
-        x
-        x
-        x
-        x
-     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    x     x                                    xx
-   x      x                                   x x
-  x                                          x  x
- x                                          x   x
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
-x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
-x  x x x   x xx  x x      xx xx xx  x xx  xx   x
-x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
-x  x x x   x x  xx x   x  x   x x   x x  xxx x
-x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+        print(hangman_draw1)
         while dc < 6:
             print("Enter a letter: ")
             letter = input()
@@ -139,215 +326,19 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
             print(letters_missed)
             print("\n")
             if dc == 0:
-                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        x       x                    x
-        x      x                     x
-        x     x                      x
-        x    x
-        x   x
-        x  x
-        x x
-        xx
-        x
-        x
-        x
-        x
-        x
-        x
-        x
-        x
-     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    x                                           x
-   x                                          x x
-  x                                          x  x
- x                                          x   x
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
-x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
-x  x x x   x xx  x x      xx xx xx  x xx  xx   x
-x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
-x  x x x   x x  xx x   x  x   x x   x x  xxx x
-x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+                print(hangman_draw1)
             elif dc == 1:
-                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        x       x                    x
-        x      x                     x
-        x     x                      x
-        x    x                     xxxxx
-        x   x                      xxxxx
-        x  x                       xxxxx
-        x x                        xxxxx
-        xx
-        x
-        x
-        x
-        x
-        x
-        x
-        x
-        x
-     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    x                                          xx
-   x                                          x x
-  x                                          x  x
- x                                          x   x
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
-x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
-x  x x x   x xx  x x      xx xx xx  x xx  xx   x
-x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
-x  x x x   x x  xx x   x  x   x x   x x  xxx x
-x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+                print(hangman_draw2)
             elif dc == 2:
-                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        x       x                    x
-        x      x                     x
-        x     x                      x
-        x    x                     xxxxx
-        x   x                      xxxxx
-        x  x                       xxxxx
-        x x                        xxxxx
-        xx                           x
-        x                            x
-        x                            x
-        x                            x
-        x                            x
-        x                            x
-        x
-        x
-        x
-     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    x                                          xx
-   x                                          x x
-  x                                          x  x
- x                                          x   x
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
-x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
-x  x x x   x xx  x x      xx xx xx  x xx  xx   x
-x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
-x  x x x   x x  xx x   x  x   x x   x x  xxx x
-x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+                print(hangman_draw3)
             elif dc == 3:
-                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        x       x                    x
-        x      x                     x
-        x     x                      x
-        x    x                     xxxxx
-        x   x                      xxxxx
-        x  x                       xxxxx
-        x x                        xxxxx
-        xx                           x
-        x                            x
-        x                            x
-        x                            x
-        x                            x
-        x                            x
-        x                           x
-        x                          x
-        x                         x
-     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    x     x                                    xx
-   x      x                                   x x
-  x                                          x  x
- x                                          x   x
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
-x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
-x  x x x   x xx  x x      xx xx xx  x xx  xx   x
-x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
-x  x x x   x x  xx x   x  x   x x   x x  xxx x
-x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+                print(hangman_draw4)
             elif dc == 4:
-                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        x       x                    x
-        x      x                     x
-        x     x                      x
-        x    x                     xxxxx
-        x   x                      xxxxx
-        x  x                       xxxxx
-        x x                        xxxxx
-        xx                           x
-        x                            x
-        x                            x
-        x                            x
-        x                            x
-        x                            x
-        x                           x x
-        x                          x   x
-        x                         x     x
-     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    x     x                                    xx
-   x      x                                   x x
-  x                                          x  x
- x                                          x   x
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
-x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
-x  x x x   x xx  x x      xx xx xx  x xx  xx   x
-x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
-x  x x x   x x  xx x   x  x   x x   x x  xxx x
-x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+                print(hangman_draw5)
             elif dc == 5:
-                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        x       x                    x
-        x      x                     x
-        x     x                      x
-        x    x                     xxxxx
-        x   x                      xxxxx
-        x  x                       xxxxx
-        x x                        xxxxx
-        xx                           x
-        x                            xx
-        x                            x x
-        x                            x  x
-        x                            x   x
-        x                            x
-        x                           x x
-        x                          x   x
-        x                         x     x
-     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    x     x                                    xx
-   x      x                                   x x
-  x                                          x  x
- x                                          x   x
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
-x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
-x  x x x   x xx  x x      xx xx xx  x xx  xx   x
-x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
-x  x x x   x x  xx x   x  x   x x   x x  xxx x
-x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+                print(hangman_draw6)
             elif dc == 6:
-                print("""\       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        x       x                    x
-        x      x                     x
-        x     x                      x
-        x    x                     xxxxx
-        x   x                      xxxxx
-        x  x                       xxxxx
-        x x                        xxxxx
-        xx                           x
-        x   x   xxxxxxxxxxxxxxx     xxx
-        x   x   x  xx       x      x x x
-        x   x   x  xxxxxx   x     x  x  x
-        x   x   x  x    x   x    x   x   x
-        x   xxxxxxxxxxxxx   x        x
-        x                           x x
-        x                          x   x
-        x                         x     x
-     xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-    x     x                                    xx
-   x      x                                   x x
-  x                                          x  x
- x                                          x   x
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    x
-x  x x  xxx  x   x  xxx   x   x  xxx  x   xx    x
-x  x x x   x xx  x x      xx xx xx  x xx  xx   x
-x  xxx xxxxx x x x x xxx  x x x xxxxx x x xx  x
-x  x x x   x x  xx x   x  x   x x   x x  xxx x
-x  x xxx   xxx   x  xxx   x   x x   xxx   xxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx""")
+                print(hangman_draw7)
         if rematch != False:
             print("you just lost")
             rematch = decide()
